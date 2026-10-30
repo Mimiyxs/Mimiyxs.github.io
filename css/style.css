@@ -1,7 +1,5 @@
 
-/* ==============================
-   COLORS & GLOBAL STYLES
-============================== */
+/* -- Colors & Global Styles -- */
 
 :root {
     --sage: #a8c4b8;
@@ -21,7 +19,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 15px;
 }
 
 body {
@@ -43,7 +41,7 @@ a:focus-visible {
 }
 
 section {
-    scroll-margin-top: 20px;
+    scroll-margin-top: -10px;
 }
 
 main {
@@ -51,9 +49,7 @@ main {
     width: 100%;
 }
 
-/* ==============================
-   TOP NAVIGATION
-============================== */
+/* -- Top Navigation -- */
 
 .top-nav {
     min-height: 82px;
@@ -76,9 +72,7 @@ main {
     color: var(--green);
 }
 
-/* ==============================
-   HERO / INTRODUCTION
-============================== */
+/* -- Hero / Introduction -- */
 
 .hero {
     min-height: 485px;
@@ -156,9 +150,7 @@ main {
     text-align: left;
 }
 
-/* ==============================
-   SOCIAL LINKS
-============================== */
+/* -- Social Links -- */
 
 .social-links {
     display: flex;
@@ -188,21 +180,13 @@ main {
     transform: translateY(-4px);
 }
 
-.social-links a:first-child {
-    font-size: 30px;
-}
-
-.social-links a:nth-child(2) {
-    font-size: 30px;
-}
-
+.social-links a:first-child,
+.social-links a:nth-child(2),
 .social-links a:nth-child(3) {
     font-size: 30px;
 }
 
-/* ==============================
-   RESUME BUTTON
-============================== */
+/* -- Resume Button -- */
 
 .resume-button {
     display: inline-flex;
@@ -232,9 +216,7 @@ main {
     transform: translateY(-3px);
 }
 
-/* ==============================
-   ABOUT ME
-============================== */
+/* -- About Me -- */
 
 .about-me-section {
     padding: 25px 7%;
@@ -252,7 +234,7 @@ main {
     font-weight: 500;
 }
 
-/* Main About Me Layout */
+/* -- About Me Content -- */
 
 .about-me-content {
     display: grid;
@@ -261,7 +243,7 @@ main {
     gap: 40px;
 }
 
-/* Photo */
+/* -- About Me Photo -- */
 
 .about-me-photo {
     grid-column: 1;
@@ -282,13 +264,13 @@ main {
     margin-left: 40px;
 }
 
-/* Description */
+/* -- About Me Description -- */
 
 .about-me-description {
     grid-column: 2;
     grid-row: 1;
     min-width: 0;
-    padding: 0 0 20px;
+    padding: 0 0 5px;
 }
 
 .about-me-description h3 {
@@ -303,28 +285,27 @@ main {
     line-height: 1.7;
 }
 
-/* ==============================
-   SKILLS BOXES
-============================== */
+/* -- Skills Container -- */
 
 .skills-container {
     grid-column: 2;
     grid-row: 2;
-
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
-
     width: 100%;
     min-width: 0;
-    margin-top: 15px;
+    margin-top: -32px;
 }
+
+/* -- Skills Box -- */
 
 .skills-box {
     min-width: 0;
     height: 230px;
     box-sizing: border-box;
     padding: 20px;
+
     background: #f7f8f6;
     border: 1px solid #d9e4dc;
     border-radius: 14px;
@@ -342,6 +323,8 @@ main {
     overflow-wrap: break-word;
 }
 
+/* -- Skills List -- */
+
 .skills-box ul {
     flex: 1;
     min-height: 0;
@@ -355,16 +338,10 @@ main {
     color: #60796b;
     font-size: 17px;
     line-height: 1.8;
-}
-
-.skills-box li {
-    color: #60796b;
-    font-size: 17px;
-    line-height: 1.8;
     overflow-wrap: anywhere;
 }
 
-/* Scrollbar Appearance */
+/* -- Skills Scrollbar -- */
 
 .skills-box ul::-webkit-scrollbar {
     width: 6px;
@@ -380,9 +357,7 @@ main {
     border-radius: 10px;
 }
 
-/* ==============================
-   PROJECTS
-============================== */
+/* -- Projects -- */
 
 .projects-section {
     padding: 80px 7%;
@@ -403,11 +378,15 @@ main {
     margin: 10px 0 30px;
 }
 
+/* -- Project Grid -- */
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
 }
+
+/* -- Project Card -- */
 
 .project-card {
     position: relative;
@@ -447,9 +426,7 @@ main {
     text-underline-offset: 4px;
 }
 
-/* ==============================
-   CONTACT
-============================== */
+/* -- Contact -- */
 
 .contact-section {
     padding: 85px 7%;
@@ -460,6 +437,8 @@ main {
 .contact-section > p:not(.section-label) {
     color: #60796b;
 }
+
+/* -- Contact Button -- */
 
 .contact-button {
     display: inline-block;
@@ -477,9 +456,7 @@ main {
     background: #d5e6db;
 }
 
-/* ==============================
-   FOOTER
-============================== */
+/* -- Footer -- */
 
 footer {
     padding: 20px;
@@ -488,9 +465,7 @@ footer {
     font-size: 14px;
 }
 
-/* ==============================
-   TABLET
-============================== */
+/* -- Tablet Layout -- */
 
 @media (max-width: 950px) {
 
@@ -538,9 +513,7 @@ footer {
     }
 }
 
-/* ==============================
-   ABOUT ME - TABLET & MOBILE
-============================== */
+/* -- About Me Tablet & Mobile Layout -- */
 
 @media (max-width: 800px) {
 
@@ -583,9 +556,7 @@ footer {
     }
 }
 
-/* ==============================
-   MOBILE
-============================== */
+/* -- Mobile Layout -- */
 
 @media (max-width: 560px) {
 
@@ -652,9 +623,7 @@ footer {
     }
 }
 
-/* ==============================
-   REDUCED MOTION
-============================== */
+/* -- Reduced Motion -- */
 
 @media (prefers-reduced-motion: reduce) {
 
