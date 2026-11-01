@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7f4">
+    <meta name="description" content="Camille Phan's Portfolio">
+    <title>Camille Phan | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+   <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+
+        <a class="brand" href="#home">CAMILLE </a>
+
+        <div class="nav-links">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-link" href="#stack">Technologies</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </div>
+
+        <button class="menu-toggle" type="button"
+            aria-label="Open navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+    <main>
+        <!-- HERO -->
+        <section class="hero section-shell" id="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow"><span class="eyebrow-line"></span> SOFTWARE ENGINEERING STUDENT</p>
+                <h1>Hi, I'm <span>Camille</span><br>Phan.</h1>
+                <p class="hero-description">
+                    I'm a Software Engineering student at College de Bois-de-Boulogne,
+                    interested in creating useful applications and well-structured interactive games.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">Explore my work <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a class="button button-outline" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Download résumé <i class="fa-solid fa-download"></i></a>
+                </div>
+
+                <div class="hero-socials" aria-label="Social links">
+                    <a href="mailto:camille.phantt@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/camille-phan007/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Mimiyxs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="portrait-frame">
+                    <img src="images/portrait.png" alt="Portrait of Camille" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+                    <div class="portrait-fallback"><i class="fa-regular fa-user"></i><span>Add your portrait</span></div>
+                    <div class="portrait-decoration"></div>
+                </div>
+
+                <div class="floating-card card-location">
+                    <span class="floating-icon"><i class="fa-solid fa-location-dot"></i></span>
+                    <div><strong>Based in Montréal</strong><small>Québec, Canada</small></div>
+                </div>
+                <span class="hero-orbit orbit-one"></span>
+                <span class="hero-orbit orbit-two"></span>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section section-about" id="about">
+            <div class="section-heading reveal">
+                <p class="eyebrow">A LITTLE INTRODUCTION</p>
+                <h2>About <span>me</span></h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-panel about-main reveal">
+                    <div class="about-panel-top"><span class="panel-icon"><i class="fa-regular fa-user"></i></span><span class="panel-kicker">WHO AM I?</span></div>
+                    <h3>Camille <span>Phan</span></h3>
+                    <p>
+                        Hi there! I'm Camille, a Software Engineering student specializing
+                        in the development of mobile and web applications, database
+                        management, game simulations, and programming languages.
+                    </p>
+                    <p>
+                        My main focus is building, maintaining, and organizing software projects with clean code and well-structured architecture.
+                    </p>
+                </div>
+
+                <div class="about-panel personal-panel reveal">
+                    <div class="about-panel-top"><span class="panel-icon"><i class="fa-regular fa-compass"></i></span><span class="panel-kicker">PERSONAL DETAILS</span></div>
+                    <div class="detail-grid">
+                        <div><small>NAME</small><strong>Camille (Thi My Tam) Phan</strong></div>
+                        <div><small>EDUCATION</small><strong>Software Engineering</strong></div>
+                        <div><small>COLLEGE</small><strong>Bois-de-Boulogne</strong></div>
+                        <div><small>LOCATION</small><strong>Montréal, Québec, CA</strong></div>
+                        <div><small>ORIGINE</small><strong>Vietnam - France</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE / LEARNING JOURNEY -->
+        <section class="section section-experience" id="experience">
+            <div class="section-heading reveal">
+                <p class="eyebrow">MY DEVELOPMENT JOURNEY</p>
+                <h2>Learning & <span>experience</span></h2>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-date">CURRENT</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-heading"><div><p class="timeline-type">EDUCATION</p><h3>Software Engineering Student</h3><p class="timeline-place">College de Bois-de-Boulogne · Montréal</p></div><span class="timeline-symbol"><i class="fa-solid fa-graduation-cap"></i></span></div>
+                        <p>Developing foundations in programming, software design, databases, and application development through coursework and practical projects.</p>
+                        <div class="tag-list"><span>Programming</span><span>Databases</span><span>Software design</span><span>Game simulations</span></div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-date">PROJECT-BASED</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-heading"><div><p class="timeline-type">PERSONAL & ACADEMIC PROJECTS</p><h3>Learning through building</h3><p class="timeline-place">Independent and school projects</p></div><span class="timeline-symbol"><i class="fa-solid fa-laptop-code"></i></span></div>
+                        <p>Applying programming concepts by creating interactive game experiences and exploring web, mobile, and software application ideas.</p>
+                        <div class="tag-list"><span>Unity</span><span>C#</span><span>Java</span><span>SQL</span><span>Git</span><span>Android Studio</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- TECH STACK -->
+        <section class="section section-stack" id="stack">
+            <div class="section-heading reveal">
+                <p class="eyebrow">SKILLS & TOOLS</p>
+                <h2> <span>Technologies</span></h2>
+                <p>I've worked with : </p>
+            </div>
+
+            <div class="stack-groups">
+                <article class="stack-group reveal">
+                    <div class="stack-group-heading"><span class="stack-heading-icon"><i class="fa-solid fa-code"></i></span><div><h3>Programming languages</h3><p>Languages I use</p></div></div>
+                    <div class="tool-chips">
+                        <span>C#</span><span>Kotlin</span><span>Java</span><span>JavaScript</span><span>Rust</span><span>Python</span><span>SQL</span><span>HTML</span><span>CSS</span>
+                    </div>
+                </article>
+
+
+                <article class="stack-group reveal">
+                    <div class="stack-group-heading"><span class="stack-heading-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span><div><h3>Software & tools</h3><p>Tools used for development and collaboration.</p></div></div>
+                    <div class="tool-chips">
+                        <span>Unity</span><span>Visual Studio</span><span>Android Studio</span><span>IntelliJ IDEA</span><span>GitHub</span><span>Postman</span><span>Figma</span><span>Blender</span><span>VirtualBox</span><span>SQL Developer</span>
+                    </div>
+                </article>
+
+                <article class="stack-group reveal">
+                    <div class="stack-group-heading"><span class="stack-heading-icon"><i class="fa-solid fa-people-group"></i></span><div><h3>Soft skills</h3><p>How I approach working with people and problems.</p></div></div>
+                    <div class="tool-chips soft-chips">
+                        <span>Communication</span><span>Teamwork</span><span>Problem-solving</span><span>Adaptability</span><span>Time management</span><span>Leadership</span><span>Creativity</span><span>Organization</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section section-projects" id="projects">
+            <div class="section-heading reveal">
+                <p class="eyebrow">A FEW THINGS I'VE MADE</p>
+                <h2>Selected <span>projects</span></h2>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <div class="project-image project-image-one"><div class="project-image-placeholder"><i class="fa-solid fa-gamepad"></i><span>Project preview</span></div><span class="project-category">GAME DEVELOPMENT</span></div>
+                    <div class="project-content"><div class="project-meta"><span>01 / GAME</span><span class="project-status">In development</span></div><h3>3D Metroidvania Platformer</h3><p>A 3D platformer project exploring player movement, level design, game mechanics, and interactive environments in Unity.</p><div class="tag-list"><span>Unity</span><span>C#</span><span>Game design</span></div><a class="project-link" href="https://github.com/Mimiyxs" target="_blank" rel="noopener noreferrer">On development<i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                </article>
+
+                <article class="project-card project-card-placeholder reveal">
+                    <div class="project-image project-image-three"><div class="project-image-placeholder"><i class="fa-solid fa-code"></i><span>Coming soon</span></div><span class="project-category">MORE COMING SOON</span></div>
+                    <div class="project-content"><div class="project-meta"><span>03 / NEXT</span><span class="project-status">Coming soon</span></div><h3>Another project</h3><p>...</p><div class="tag-list"><span>Coming soon</span><span>Coming soon</span></div><a class="project-link" href="mailto:camille.phantt@gmail.com">Ask me about it <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                </article>
+
+                <!--article class="project-card project-card-placeholder reveal">
+                    <div class="project-image project-image-three"><div class="project-image-placeholder"><i class="fa-solid fa-code"></i><span>Coming soon</span></div><span class="project-category">MORE COMING SOON</span></div>
+                    <div class="project-content"><div class="project-meta"><span>03 / NEXT</span><span class="project-status">Coming soon</span></div><h3>Another project</h3><p>...</p><div class="tag-list"><span>Coming soon</span><span>Coming soon</span></div><a class="project-link" href="mailto:camille.phantt@gmail.com">Ask me about it <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                </article-->
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section section-contact" id="contact">
+            <div class="section-heading reveal">
+                <p class="eyebrow">LET'S CONNECT</p>
+                <h2>Have something <span>in mind?</span></h2>
+                <p>Have a question or want to talk about a project? Send me a message.</p>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-info reveal">
+                    <h3>Let's start a conversation.</h3>
+                    <p>I'm always happy to connect, exchange ideas, and learn about interesting opportunities.</p>
+                    <a class="contact-detail" href="mailto:camille.phantt@gmail.com"><span><i class="fa-regular fa-envelope"></i></span><div><small>EMAIL ME</small><strong>camille.phantt@gmail.com</strong></div></a>
+                    <a class="contact-detail" href="https://www.linkedin.com/in/camille-phan007/" target="_blank" rel="noopener noreferrer"><span><i class="fa-brands fa-linkedin-in"></i></span><div><small>CONNECT ON</small><strong>LinkedIn</strong></div></a>
+                    <a class="contact-detail" href="https://github.com/Mimiyxs" target="_blank" rel="noopener noreferrer"><span><i class="fa-brands fa-github"></i></span><div><small>EXPLORE MY PROJECT</small><strong>GitHub</strong></div></a>
+                </div>
+
+                <form class="contact-form reveal" id="contact-form">
+                    <label for="contact-name">Your name</label>
+                    <input id="contact-name" name="name" type="text" placeholder="Jane smith" required>
+                    <label for="contact-email">Email address</label>
+                    <input id="contact-email" name="email" type="email" placeholder="jane@example.com" required>
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                    <button class="button button-primary form-submit" type="submit">Send message <i class="fa-solid fa-paper-plane"></i></button>
+                    <p class="form-note">This form opens your email app to send the message.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a class="brand" href="#home">CAMILLE<span>.</span></a>
+        <p>Designed & built by Camille · © <span id="year"></span></p>
+        <a class="back-top" href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+    </footer>
+
+
+
+</body>
+</html>
