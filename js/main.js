@@ -1,86 +1,160 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector(".navbar");
+    /*
+       TABLE OF CONTENTS
+
+       1. ELEMENT SELECTION
+       2. MOBILE NAVIGATION
+       3. STICKY HEADER OFFSET
+       4. SECTION NAVIGATION
+       5. ACTIVE SECTION HIGHLIGHT
+       6. CONTACT FORM
+       7. INITIALIZATION */
+
+
+    // 1. ELEMENT SELECTION
+    const siteHeader = document.querySelector(".site-header");
+    const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
     const navItems = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll("main section[id]");
-    const year = document.getElementById("year");
+    const contactForm = document.querySelector("#contact-form");
 
-    if (year) year.textContent = new Date().getFullYear();
+    // 2. MOBILE NAVIGATION
+    function setMenuState(isOpen) {
+        if (!menuToggle || !navLinks) return;
 
-    let menuToggle = document.querySelector(".menu-toggle");
-    if (navbar && navLinks && !menuToggle) {
-        menuToggle = document.createElement("button");
-        menuToggle.className = "menu-toggle";
-        menuToggle.type = "button";
-        menuToggle.setAttribute("aria-label", "Open navigation");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-controls", "primary-navigation");
-        menuToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-        navLinks.id = "primary-navigation";
-        navbar.insertBefore(menuToggle, navLinks);
-    }
+        navLinks.classList.toggle("open", isOpen);
+        menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
 
-    function closeMenu() {
-        if (!navLinks || !menuToggle) return;
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-        menuToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+        updateHeaderOffset();
     }
 
     menuToggle?.addEventListener("click", () => {
-        const open = navLinks.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(open));
-        menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-        menuToggle.innerHTML = open
-            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        const isOpen = navLinks?.classList.contains("open");
+        setMenuState(!isOpen);
     });
 
-    navItems.forEach(link => link.addEventListener("click", closeMenu));
 
-    document.addEventListener("click", event => {
-        if (navbar && navLinks?.classList.contains("open") && !navbar.contains(event.target)) {
-            closeMenu();
-        }
-    });
-
-    if ("IntersectionObserver" in window) {
-        const sectionObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                navItems.forEach(link => {
-                    link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
-                });
-            });
-        }, { rootMargin: "-35% 0px -55% 0px" });
-
-        sections.forEach(section => sectionObserver.observe(section));
-
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll(".reveal").forEach(element => revealObserver.observe(element));
-    } else {
-        document.querySelectorAll(".reveal").forEach(element => element.classList.add("visible"));
+    // 3. STICKY HEADER OFFSET
+    function getHeaderHeight() {
+        return siteHeader ? Math.ceil(siteHeader.getBoundingClientRect().height): 0;
     }
 
-    const contactForm = document.getElementById("contact-form");
-    contactForm?.addEventListener("submit", event => {
-        event.preventDefault();
-        const data = new FormData(contactForm);
-        const name = String(data.get("name") || "").trim();
-        const email = String(data.get("email") || "").trim();
-        const message = String(data.get("message") || "").trim();
+    function updateHeaderOffset() {
+        const height = getHeaderHeight();
+        document.documentElement.style.setProperty(
+            "--sticky-header-height",
+            `${height + 12}px`
+        );
+    }
 
-        const subject = encodeURIComponent(`Portfolio message from ${name}`);
-        const body = encodeURIComponent(`Hi Camille,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`);
-        window.location.href = `mailto:camille.phantt@gmail.com?subject=${subject}&body=${body}`;
+    // 4. SECTION NAVIGATION (scolling)
+    document.addEventListener("click", (event) => {
+
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const targetSection = document.getElementById(
+            targetId.slice(1)
+        );
+        if (!targetSection) return;
+        event.preventDefault();
+
+        setMenuState(false); // Close mobile menu before calculating scroll position
+
+        // Calculate target position
+        const sectionTop =
+            targetSection.getBoundingClientRect().top +
+            window.scrollY;
+
+        const scrollPosition = sectionTop - getHeaderHeight();
+
+        // Smoothly scroll to the selected section
+        window.scrollTo({
+            top: Math.max(0, scrollPosition),
+            behavior: "smooth"
+        });
+
+        // Update URL without reloading
+        history.replaceState(null, "", targetId);
     });
+
+    // 5. ACTIVE SECTION HIGHLIGHT
+
+    let scrollScheduled = false;
+    function updateActiveSection() {
+        let currentSection = "home";
+        const threshold = window.innerHeight * 0.35;
+
+        sections.forEach((section) => {
+
+            if (section.getBoundingClientRect().top <= threshold) {
+                currentSection = section.id;
+            }
+        });
+        navItems.forEach((link) => {
+
+            const isActive =
+                link.getAttribute("href") === `#${currentSection}`;
+            link.classList.toggle("active", isActive);
+            if (isActive) {
+                link.setAttribute("aria-current", "location");
+            } else {
+                link.removeAttribute("aria-current");
+            }
+        });
+    }
+
+    function scheduleActiveSectionUpdate() {
+        if (scrollScheduled) return;
+        scrollScheduled = true;
+        requestAnimationFrame(() => {
+            updateActiveSection();
+            scrollScheduled = false;
+        });
+    }
+
+    // 6. CONTACT FORM
+    contactForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        const subject = encodeURIComponent(
+            `Portfolio message from ${name}`
+        );
+        const body = encodeURIComponent(
+            `Hello Camille,\n\n${message}\n\nFrom: ${name}\nEmail: ${email}`
+        );
+        // open mail app
+        window.location.href =
+            `mailto:camille.phantt@gmail.com?subject=${subject}&body=${body}`;
+    });
+
+    // 7. INITIALIZATION
+    function handleResize() {
+        updateHeaderOffset();
+        scheduleActiveSectionUpdate();
+    }
+    updateHeaderOffset();
+    updateActiveSection();
+
+    // Scroll and resize listeners
+    window.addEventListener(
+        "scroll",
+        scheduleActiveSectionUpdate,
+        { passive: true }
+    );
+    window.addEventListener("resize", handleResize);
 });
