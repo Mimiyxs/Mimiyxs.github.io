@@ -1,115 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Camille's software engineering portfolio.">
-    <title>Main | Camille Phan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Camille Phan's portfolio" />
+  <title>Camille Phan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-    <body>
-    <header class="site-header"><nav class="navbar">
-        <a class="brand" href="#home">Camille Phan</a>
-        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-        <div class="nav-links">
-            <a class="nav-link" href="#about">About me</a>
-            <a class="nav-link" href="#experiences">Experiences</a>
-            <a class="nav-link" href="#projects">Projects</a>
-            <a class="nav-link" href="#contact">Contact</a>
+<body>
+  <div id="shader-background" aria-hidden="true"></div>
+  <div class="background-tint" aria-hidden="true"></div>
+  <main class="portfolio" id="home">
+    <header class="portfolio-header"><h1>Camille’s portfolio</h1></header>
+    <div class="portfolio-body">
+      <div class="left-column">
+        <div class="contact-links" id="contact">
+          <a href="mailto:Camille.phantt@gmail.com"><span class="contact-symbol">✉</span>Camille.phantt@gmail.com</a>
+          <a href="https://www.linkedin.com/in/camille-phan007/" target="_blank" rel="noopener noreferrer"><span class="contact-symbol">in</span>LinkedIn</a>
+          <a href="https://github.com/Mimiyxs" target="_blank" rel="noopener noreferrer"> <span class="contact-symbol"><i class="fa fa-github"></span></i>GitHub</a>
         </div>
-    </nav>
-    </header>
-
-
-    <main class="page-shell">
-        <section class="home-page" id="home">
-            <div class="home-folders">
-                <a class="folder-link" href="#about"><img src="images/folder1.jpeg" alt="About me folder" class="folder-image"><span>About me</span></a>
-                <a class="folder-link" href="#experiences"><img src="images/folder2.jpeg" alt="Experiences folder" class="folder-image"><span>Experiences</span></a>
-                <a class="folder-link" href="#projects"><img src="images/folder3.jpeg" alt="Projects folder" class="folder-image"><span>Projects</span></a>
-                <a class="folder-link" href="#contact"><img src="images/folder4.jpeg" alt="Contact folder" class="folder-image"><span>Contact</span></a>
-            </div>
-
-        <div class="home-profile">
-            <img class="portrait-image" src="images/portrait2.png" alt="Portrait of Camille">
-            <div class="social-links">
-            <a href="https://github.com/Mimiyxs" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/camille-phan007/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="mailto:camille.phantt@gmail.com">Email</a>
-        </div>
-        <p class="welcome-message">Hi there! I'm Camille, welcome to my portfolio</p>
-        </div>
+        <button class="resume-button" type="button" disabled title="Resume PDF coming soon">Resume <span aria-hidden="true">↗</span></button>
+        <section class="info-section" id="education">
+          <h2 class="plain-heading">Education :</h2>
+          <p class="education-line">• Software Engineering<br /><span>(Collège de Bois-de-Boulogne)</span></p>
         </section>
-
-
-        <section class="content-page about-page" id="about">
-            <p class="section-kicker">About me</p>
-            <div class="about-card">
-            <h1>Camille <span>Phan</span></h1>
-            <p>Hi there! I'm Camille, a Software Engineering student specializing in the development of mobile and web applications, database management, game simulations, and programming languages.</p>
-            <p>My main focus is building, maintaining, and organizing software projects with clean code and well-structured architecture.</p>
-            </div>
-                <div class="details-card"><h2>Personal details</h2><div class="details-grid">
-                <div><span>Name</span><strong>Camille (Thi My Tam) Phan</strong></div>
-                <div><span>Education</span><strong>Software Engineering</strong></div>
-                <div><span>College</span><strong>Bois-de-Boulogne</strong></div>
-                <div><span>Location</span><strong>Montréal, Québec, CA</strong></div>
-                <div><span>Origin</span><strong>Vietnam · France</strong></div>
-            </div>
-            </div>
+        <section class="info-section" id="projects">
+          <h2 class="section-bar">My projects :</h2>
+          <div class="project-links"><a href="https://github.com/Mimiyxs" target="_blank" rel="noopener noreferrer">View projects ↗</a></div>
+          <div id="projects-list" class="project-list">
+            <p> - 3D Metroidvania Platformer — In development</p>
+            <p>- LifeInFour (Online PhotoBooth) — In development</p></div>
         </section>
-        <section class="content-page experiences-page" id="experiences">
-            <h1 class="section-title">Experiences</h1>
-            <div class="experience-grid">
-                <article class="experience-card"><span class="card-label">Education</span><h2>Software engineering student</h2><p class="muted">College de Bois-de-Boulogne · Montréal</p><p>Developing foundations in programming, software design, databases, and application development through coursework and practical projects.</p></article>
-                <article class="experience-card"><span class="card-label">Personal &amp; academic projects</span><h2>Learning through building</h2><p class="muted">Independent and school projects</p><p>Applying programming concepts by creating interactive game experiences and exploring web, mobile, and software application ideas.</p></article>
-            </div>
-            <div class="skills-panel">
-                <div class="skill-group"><h2>Programming languages</h2><p class="skill-caption">Languages I use</p><div class="tag-list"><span>C</span><span>C#</span><span>JavaScript</span><span>Rust</span><span>Kotlin</span><span>HTML</span><span>CSS</span></div></div>
-                <div class="skill-group"><h2>Software &amp; tools</h2><p class="skill-caption">Tools used for development and collaboration</p><div class="tag-list"><span>Unity</span><span>Visual Studio</span><span>Git</span><span>GitHub</span><span>SQL</span></div></div>
-                <div class="skill-group"><h2>Soft skills</h2><p class="skill-caption">How I approach working with people and problems</p><div class="tag-list"><span>Communication</span><span>Teamwork</span><span>Problem solving</span><span>Adaptability</span><span>Time management</span><span>Creativity</span><span>Organization</span></div></div>
-            </div>
+        <section class="info-section" id="languages">
+          <h2 class="section-bar">Programming languages :</h2>
+          <div class="skill-list"><span>C#</span><span>Java</span><span>Kotlin</span><span>Rust</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span></div>
         </section>
-
-        <section class="content-page projects-page" id="projects">
-            <h1 class="section-title">Selected projects</h1>
-            <div class="projects-grid">
-            <article class="project-card"><img src="images/folder3.jpeg" alt="3D Metroidvania Platformer"><h2>3D Metroidvania<br>Platformer</h2><p>In development</p><span class="project-description">A game project focused on exploration, platforming, and interactive environments.</span></article>
-            <article class="project-card"><img src="images/folder3.jpeg" alt="Online photobooth"><h2>Online<br>PhotoBooth</h2><p>In development</p><span class="project-description">Browser-based photobooth for capturing and downloading photo strips.</span></article>
-            <article class="project-card"><img src="images/folder3.jpeg" alt="Coming soon project"><h2>Coming soon</h2><p></p><span class="project-description"></span></article>
-            </div>
+        <section class="info-section" id="tools">
+          <h2 class="section-bar">Software &amp; tools</h2>
+          <div class="skill-list"><span>Unity</span><span>Android Studio</span><span>SQL developer</span><span>Oracle Database</span><span>Visual Studio</span><span>IntelliJ IDEA</span><span>Postman</span><span>Blender</span><span>VS code</span></div>
         </section>
-
-
-    <section class="content-page contact-page" id="contact">
-        <h1 class="section-title">Have something in mind?</h1>
-        <div class="contact-layout">
-            <div class="contact-info">
-                <h2>Let's start a conversation.</h2>
-                <p>I'm happy to connect, discuss ideas, or hear about opportunities.</p>
-                <a href="mailto:camille.phantt@gmail.com">camille.phantt@gmail.com</a>
-                <a href="https://www.linkedin.com/in/camille-phan007/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Mimiyxs" target="_blank">GitHub</a>
+      </div>
+      <div class="right-column" id="about">
+        <section class="about-card">
+          <div class="about-heading">ABOUT ME</div>
+          <div class="about-content">
+            <div class="about-top"><div class="about-name">Camille<br />(Thi My Tam) Phan</div><div class="portrait"><img src="/portrait.png" alt="Portrait of Camille" /></div></div>
+            <div>
+              <p>Hi there! 
+              <br> I'm a Software Engineering student specializing in development of mobile and web applications, database management and game simulations.</p>
             </div>
-            <form class="contact-form" id="contact-form">
-                <label for="name">Your name <span>*</span></label>
-                <input id="name" name="name" type="text" placeholder="Your name" required>
-                <label for="email">Email address <span>*</span></label>
-                <input id="email" name="email" type="email" placeholder="name@example.com" required>
-                <label for="message">Message <span>*</span></label>
-                <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
-                <button type="submit">Send message →</button>
-                <p class="form-note">This opens your email app with your message ready to send.</p>
-            </form>
-        </div>
-    </section>
-
-
-    </main>
-    <footer class="site-footer"><p>© 2026 Camille Phan · Software Engineering</p><a href="#home">Back to main</a></footer>
-    </body>
+          </div>
+        </section>
+        <section class="focus-section" aria-labelledby="focus-title">
+          <h2 id="focus-title"><span style="color: #ffffff; font-size: larger; 
+                            text-decoration: underline;
+                            text-underline-offset: 4px;
+                            text-decoration-thickness: 0.5px;">My main focus :</span></h2>
+          <div class="focus-flow">
+            <div>Problem solving</div>
+            <span class="flow-line"></span><div>Design & Architecture</div>
+            <span class="flow-line"></span><div>Agile development</div>
+            <span class="flow-line"></span><div>System Design & Maintenance</div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>

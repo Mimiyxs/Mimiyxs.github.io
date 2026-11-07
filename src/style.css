@@ -1,0 +1,305 @@
+:root {
+    --blue: #5a83c1c3;
+    --deep: #354f9f;
+    --white: #fff;
+    --heading: "Cormorant Garamond", Georgia, serif;
+    --body: "DM Sans", Arial, sans-serif;
+
+    color: var(--white);
+    font-family: var(--body);
+    font-synthesis: none;
+    background: #071d5b;
+}
+
+/* general */
+* {box-sizing: border-box;}
+html {scroll-behavior: smooth;}
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+a {color: inherit;}
+button {font: inherit;}
+
+/* animated background */
+#shader-background,
+.background-tint {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+#shader-background {z-index: -2;}
+.background-tint {
+    z-index: -1;
+    background: rgba(0, 12, 53, .12);
+}
+
+/* container*/
+.portfolio {
+    width: min(960px, calc(100% - 64px));
+    margin: 34px auto 65px;
+    filter: drop-shadow(0 16px 28px rgba(0, 0, 30, .2));
+}
+
+/* header */
+.portfolio-header {
+    background: var(--blue);
+    text-align: center;
+    padding: 18px 20px 16px;
+    margin-bottom: 6px;
+}
+.portfolio-header h1 {
+    font: 600 clamp(25px, 3vw, 34px)/1.1 var(--heading);
+    margin: 0;
+}
+
+/* layout */
+.portfolio-body {
+    background: var(--blue);
+    padding: 32px 42px 54px;
+    display: grid;
+    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+    column-gap: 35px;
+    min-height: 665px;
+}
+.left-column,
+.right-column {min-width: 0;}
+
+/* social links */
+.contact-links {
+    display: grid;
+    gap: 7px;
+    margin: 0 0 22px 8px;
+    font-size: 17px;
+}
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-wrap: anywhere;
+    width: fit-content;
+}
+.contact-symbol {
+    font-family: var(--body);
+    font-weight: 700;
+    width: 20px;
+    flex: none;
+    text-align: center;
+    font-size: 14px;
+    
+}
+
+/* resume button*/
+.resume-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--deep);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    min-height: 42px;
+    width: min(285px, 100%);
+    margin-bottom: 19px;
+    font-size: 18px;
+}
+.resume-button span {font-size: 20px;}
+
+/* info section */
+.info-section { margin-bottom: 23px;}
+.info-section h2 {
+    font: 600 23px/1.05 var(--heading);
+    margin: 0 0 9px;
+}
+.plain-heading {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* education section */
+.education-line {
+    margin: 0 0 0 10px;
+    font-size: 16px;
+    line-height: 1.45;
+}
+.education-line span {padding-left: 12px;}
+
+/* all the sections box */
+.section-bar {
+    width: 88%;
+    max-width: 100%;
+    background: var(--deep);
+    border-radius: 8px;
+    padding: 5px 10px 6px;
+    position: relative;
+}
+
+
+/* Projects section */
+.project-links {
+    font-size: 18px;
+    font-weight: 300;
+    font-style: oblique;
+    margin: 3px 10px;
+}
+.project-list {
+    font-size: 15px;
+    margin: 9px 10px 0;
+    line-height: 1.5;
+}
+.project-list p {margin: 3px 0;}
+
+/* Skills section */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding: 3px 8px 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+/* About me section */
+.about-card {
+    background: var(--deep);
+    border-radius: 36px;
+    overflow: hidden;
+}
+.about-heading {
+    background: #f2f2f4;
+    color: var(--deep);
+    font: 600 20px/1.1 var(--heading);
+    text-align: center;
+    padding: 14px 12px;
+}
+.about-content {padding: 16px 18px 24px;}
+.about-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 115px;
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 13px;
+}
+.about-name {
+    font: 500 clamp(23px, 2.5vw, 29px)/1.06 var(--heading);
+    overflow-wrap: normal;
+}
+
+/* Profile picture */
+.portrait {
+    width: 115px;
+    height: 115px;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top: -27px;
+    position: relative;
+}
+.portrait img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* focus section */
+.focus-section {
+    margin-top: 23px;
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+.focus-section h2 {
+    font: 600 19px var(--heading);
+    margin: 9px 0;
+    white-space: nowrap;
+}
+.focus-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.focus-flow div {
+    width: 80%;
+    max-width: 100%;
+    background: var(--deep);
+    border-radius: 9px;
+    padding: 9px 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+.focus-flow div.wide {
+    width: 100%;
+    padding: 12px 8px;
+}
+.flow-line {
+    height: 19px;
+    border-left: 1px solid #e0e9ff;
+}
+
+/*tablet*/
+@media (max-width: 760px) {
+    .portfolio {
+        width: min(560px, calc(100% - 24px));
+        margin: 18px auto 32px;
+    }
+
+    .portfolio-body {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 24px 34px;
+        gap: 10px;
+    }
+
+    .right-column,
+    .left-column {
+        display:contents;
+    }
+    .about-card {order: 1;}
+    .contact-links {
+        order: 2;
+        margin-left: 0;
+    }
+
+    .resume-button {order: 3;}
+    .info-section {order: 4;}
+    .focus-section {
+        order: 5;
+        width: 100%;
+        max-width: 400px;
+        margin: 22px auto 0;
+    }
+    .about-top {grid-template-columns: minmax(0, 1fr) 110px;}
+    .portrait {
+        width: 110px;
+        height: 110px;
+    }
+    .portfolio-header {padding: 16px;}
+}
+
+/* small screen */
+@media (max-width: 400px) {
+    .portfolio-body {padding: 20px 15px;}
+    .about-content {padding: 15px 13px 20px;}
+    .about-top {
+        grid-template-columns: minmax(0, 1fr) 90px;
+        gap: 8px;
+    }
+    .portrait {
+        width: 90px;
+        height: 90px;
+        border-radius: 20px;
+        margin-top: -18px;
+    }
+    .about-name {font-size: 23px;}
+    .focus-section {
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 6px;
+    }
+    .focus-section h2 {font-size: 17px;}
+    .focus-flow div {font-size: 11px;}
+}
