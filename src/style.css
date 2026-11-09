@@ -95,14 +95,15 @@ button {font: inherit;}
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: var(--deep);
+    background: rgb(10, 51, 183);
     color: white;
     border: 0;
     border-radius: 10px;
     min-height: 42px;
-    width: min(285px, 100%);
+    width: 88%;
     margin-bottom: 19px;
-    font-size: 18px;
+    font-size: 20px;
+    text-decoration: underline;
 }
 .resume-button span {font-size: 20px;}
 
@@ -117,13 +118,6 @@ button {font: inherit;}
     text-underline-offset: 4px;
 }
 
-/* education section */
-.education-line {
-    margin: 0 0 0 10px;
-    font-size: 16px;
-    line-height: 1.45;
-}
-.education-line span {padding-left: 12px;}
 
 /* all the sections box */
 .section-bar {
@@ -238,7 +232,6 @@ button {font: inherit;}
 }
 .flow-line {
     height: 19px;
-    border-left: 1px solid #e0e9ff;
 }
 
 /*tablet*/
